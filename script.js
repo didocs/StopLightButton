@@ -1,12 +1,17 @@
-function changeButtonColor() {
-    if (document.getElementById('button').classList == ('btn btn-danger btn-lg')) {
-        document.getElementById('button').classList.remove('btn', 'btn-danger', 'btn-lg')
-        document.getElementById('button').classList.add('btn', 'btn-warning', 'btn-lg')
-    } else if (document.getElementById('button').classList == ('btn btn-warning btn-lg')) {
-        document.getElementById('button').classList.remove('btn', 'btn-warning', 'btn-lg')
-        document.getElementById('button').classList.add('btn', 'btn-success', 'btn-lg')
-    } else if (document.getElementById('button').classList == ('btn btn-success btn-lg')) {
-        document.getElementById('button').classList.remove('btn', 'btn-success', 'btn-lg')
-        document.getElementById('button').classList.add('btn', 'btn-danger', 'btn-lg')
-    }
+let colours = ["btn-danger", "btn-warning", "btn-success"];
+let pos = 0;
+
+function loopDelay() {
+   setInterval(changeColour, 10000);
 }
+
+function changeColour() {
+  document.getElementById('button').classList.remove(colours[pos])
+  if (pos === 2) {
+    pos = -1;
+  }
+  document.getElementById('button').classList.add(colours[pos + 1])
+    ++pos;
+}
+
+loopDelay();

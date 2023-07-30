@@ -11,7 +11,7 @@ function changeColour() {
     pos = -1;
   }
   document.getElementById('button').classList.add(colours[pos + 1])
-    ++pos;
+   ++pos;
 }
 
 loopDelay();
